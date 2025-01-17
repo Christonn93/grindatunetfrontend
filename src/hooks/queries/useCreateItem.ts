@@ -1,13 +1,12 @@
-import { useMutation } from "@tanstack/react-query";
-import { queryClient } from "./QueryProvider";
+import { useQuery } from "@tanstack/react-query";
 import { createItem } from "@/services/axios/createItem";
-import { CosmicObject, CreateObjectPayload } from "@/types/cosmic";
+import { CreateObjectPayload } from "@/types/cosmic";
 
-export const useCreateItem = () => {
-
-  return useMutation<CosmicObject, Error, CreateObjectPayload>(createItem, {
-    onSuccess: () => {
-      queryClient.invalidateQueries(['items']);
-    },
-  });
+export const useCreateItem = (item: CreateObjectPayload) => {
+ return useQuery({
+  queryKey: ["items", item],
+  queryFn: () => createItem(item),
+  staleTime: 5 * 60 * 100,
+  enabled: !!item,
+ });
 };

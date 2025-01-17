@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Container } from "@mui/material";
 import { footerRouter } from "@/options/router";
 import { FooterSection } from "../sections/FooterSection";
-import HealthCheck from "../HealthCheck";
+import HealthCheck from "../alert/healthCheck/HealthCheck";
 import { CompanyDisplay } from "../display/CompanyDisplay";
 
 export const Footer: React.FC = () => {

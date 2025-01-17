@@ -8,7 +8,7 @@ export default function HealthCheck() {
  useEffect(() => {
   const checkHealth = async () => {
    try {
-    const response = await fetch("/api/healthcheck");
+    const response = await fetch("/api/health");
     const data = await response.json();
     if (response.ok) {
      setStatus(data.message);
@@ -16,7 +16,7 @@ export default function HealthCheck() {
      setError(data.message);
     }
    } catch {
-    setError("Unable to connect to the server");
+    setError("Unable to connect to the Cosmic API");
    }
   };
 
@@ -25,7 +25,11 @@ export default function HealthCheck() {
 
  return (
   <Box mt={3}>
-   {status && <Alert severity="success">{status}</Alert>}
+   {status && (
+    <>
+     <Alert severity="success">{status}</Alert>
+    </>
+   )}
    {error && <Alert severity="error">{error}</Alert>}
   </Box>
  );

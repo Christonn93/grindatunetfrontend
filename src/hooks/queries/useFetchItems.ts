@@ -1,6 +1,11 @@
-import { useQuery } from '@tanstack/react-query';
-import { CosmicObject } from '@/types/cosmic';
-import { fetchItems } from '@/services/axios/fetchItems';
+import { useQuery } from "@tanstack/react-query";
+import { fetchItems } from "@/services/axios/fetchItems";
 
-export const useFetchItems = () =>
-  useQuery<CosmicObject[]>(['items'], fetchItems);
+export const useFetchItems = (enabled: boolean) => {
+ return useQuery({
+  queryKey: ["items"],
+  queryFn: () => fetchItems(),
+  staleTime: 5 * 60 * 100,
+  enabled,
+ });
+};

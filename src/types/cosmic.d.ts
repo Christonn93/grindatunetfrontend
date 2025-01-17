@@ -1,18 +1,21 @@
-export interface CosmicObject {
-  id: string;
+export type CosmicObject = {
+  id:  string;
   title: string;
   content: string;
   [key: string]: unknown;
 }
 
-export interface CreateObjectPayload {
+export type CreateObjectPayload = {
   title: string;
   content: string;
   type: string;
 }
 
-export interface UpdateObjectPayload {
+export type UpdateObjectPayload = {
   id: string;
   title?: string;
   content?: string;
+}
+export type DeleteObjectPayload = {
+  id: unknown;
 }

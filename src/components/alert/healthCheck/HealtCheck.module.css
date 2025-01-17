@@ -1,0 +1,11 @@
+.icon-path {
+  fill: #3DBFF5;
+}
+
+.icon-fail .icon-path {
+  fill: #FF0000;
+}
+
+.icon-ok .icon-path {
+  fill: #3DBFF5;
+}

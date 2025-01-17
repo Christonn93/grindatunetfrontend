@@ -1,12 +1,12 @@
 import { deleteItem } from "@/services/axios/deleteItem";
-import { useMutation } from "@tanstack/react-query";
-import { queryClient } from "./QueryProvider";
+import { useQuery } from "@tanstack/react-query";
+import { DeleteObjectPayload } from "@/types/cosmic";
 
-export const useDeleteItem = () => {
-
-  return useMutation<void, Error, string>(deleteItem, {
-    onSuccess: () => {
-      queryClient.invalidateQueries(['items']);
-    },
-  });
+export const useDeleteItem = (id: DeleteObjectPayload) => {
+ return useQuery({
+  queryKey: ["id"],
+  queryFn: () => deleteItem(id),
+  staleTime: 5 * 60 * 100,
+  enabled: !!id,
+ });
 };

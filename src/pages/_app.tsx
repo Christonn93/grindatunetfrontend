@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import theme from "@/theme/theme";
 import Layout from "@/components/layout/Layout";
 import { JSX } from "react";
+import "../theme/svgColor.css";
 
 type AppPropsWithLayout = AppProps & {
  Component: {
