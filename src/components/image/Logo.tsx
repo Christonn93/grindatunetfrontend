@@ -1,3 +1,6 @@
+import Image from "next/image";
+import LogoImage from "../../assets/ngLogo.jpg";
+
 export const Logo = () => {
- return <img src="/logo.png" alt="Logo" style={{ height: 40, marginRight: 8 }} />;
+ return <Image src={LogoImage} alt="Logo" style={{ width: "100px", height: "50px", marginRight: 8 }} />;
 };

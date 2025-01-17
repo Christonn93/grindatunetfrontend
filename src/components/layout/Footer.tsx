@@ -1,8 +1,14 @@
 import React from "react";
-import { Box, Container, Typography, Link } from "@mui/material";
+import { Box, Container } from "@mui/material";
+import { footerRouter } from "@/options/router";
+import { FooterSection } from "../sections/FooterSection";
 import HealthCheck from "../HealthCheck";
+import { CompanyDisplay } from "../display/CompanyDisplay";
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
+ const usefulLinks = footerRouter.filter((link) => ["Home", "About Us", "Services"].includes(link.name));
+ const moreLinks = footerRouter.filter((link) => ["Contact Us", "FAQ", "Privacy Policy"].includes(link.name));
+
  return (
   <Box
    sx={{
@@ -17,55 +23,9 @@ export const Footer = () => {
   >
    <Container>
     <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
-     <Box sx={{ display: "flex", flexDirection: "column" }}>
-      <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-       Your Company
-      </Typography>
-     </Box>
-     <Box sx={{ display: "flex", flexDirection: "column" }}>
-      <Typography variant="h6" sx={{ mb: 2 }}>
-       Useful Links
-      </Typography>
-      <ul style={{ listStyle: "none", padding: 0 }}>
-       <li>
-        <Link href="/" variant="body2" sx={{ textDecoration: "none" }}>
-         Home
-        </Link>
-       </li>
-       <li>
-        <Link href="/about" variant="body2" sx={{ textDecoration: "none" }}>
-         About Us
-        </Link>
-       </li>
-       <li>
-        <Link href="/services" variant="body2" sx={{ textDecoration: "none" }}>
-         Services
-        </Link>
-       </li>
-      </ul>
-     </Box>
-     <Box sx={{ display: "flex", flexDirection: "column" }}>
-      <Typography variant="h6" sx={{ mb: 2 }}>
-       More Links
-      </Typography>
-      <ul style={{ listStyle: "none", padding: 0 }}>
-       <li>
-        <Link href="/contact" variant="body2" sx={{ textDecoration: "none" }}>
-         Contact Us
-        </Link>
-       </li>
-       <li>
-        <Link href="/faq" variant="body2" sx={{ textDecoration: "none" }}>
-         FAQ
-        </Link>
-       </li>
-       <li>
-        <Link href="/privacy" variant="body2" sx={{ textDecoration: "none" }}>
-         Privacy Policy
-        </Link>
-       </li>
-      </ul>
-     </Box>
+     <CompanyDisplay />
+     <FooterSection title="Useful Links" links={usefulLinks} />
+     <FooterSection title="More Links" links={moreLinks} />
     </Box>
     <HealthCheck />
    </Container>

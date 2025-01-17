@@ -13,14 +13,7 @@ export const Main = ({ children }: LayoutProps) => {
    }}
   >
    <Container maxWidth="xl">
-    <Box
-     sx={{
-      padding: 2,
-      border: "1px solid red",
-     }}
-    >
-     {children}
-    </Box>
+    <Box>{children}</Box>
    </Container>
   </Box>
  );
