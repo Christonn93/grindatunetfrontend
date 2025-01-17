@@ -15,7 +15,7 @@ export default function HealthCheck() {
     } else {
      setError(data.message);
     }
-   } catch (err) {
+   } catch {
     setError("Unable to connect to the server");
    }
   };
