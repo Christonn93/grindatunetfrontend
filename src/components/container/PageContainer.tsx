@@ -11,7 +11,6 @@ const ContainerStyle = {
  display: "flex",
  flexDirection: "column",
  gap: 2,
- height: "100vh",
  padding: 2,
 };
 

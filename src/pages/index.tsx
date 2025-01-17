@@ -1,9 +1,5 @@
-import { Box, Typography } from "@mui/material";
+import { Home } from "@/components/pageContent/Home";
 
 export default function HomePage() {
- return (
-  <Box>
-   <Typography variant="h1">Velkommen</Typography>
-  </Box>
- );
+ return <Home />;
 }

@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import client from "@/services/dbClient";
+import client from "@/services/edgeDb/dbClient";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
  try {

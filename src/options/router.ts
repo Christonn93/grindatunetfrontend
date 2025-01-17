@@ -30,17 +30,17 @@ export const footerRouter = [
   {
     id: 2,
     path: "/about",
-    name: "About Us",
+    name: "Om hytta",
   },
   {
     id: 3,
     path: "/services",
     name: "Services",
   },
-  {
+ {
     id: 4,
     path: "/contact",
-    name: "Contact Us",
+    name: "Kontakt",
   },
   {
     id: 5,
