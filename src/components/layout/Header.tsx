@@ -1,6 +1,6 @@
 import React from "react";
 import { AppBar, Container, Toolbar } from "@mui/material";
-import { HeaderNavigation } from "../navigation/HeaderNavigation";
+import { Navigation } from "../navigation/Navigation";
 import { CompanyDisplay } from "../display/CompanyDisplay";
 import { MobileMenuButton } from "../button/MobileMenuButton";
 import { AuthButtons } from "../button/AuthButtons";
@@ -14,7 +14,7 @@ export const Header = () => {
     <Container>
      <Toolbar disableGutters sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
       <CompanyDisplay />
-      <HeaderNavigation />
+      <Navigation />
       <AuthButtons />
       <MobileMenuButton />
      </Toolbar>

@@ -1,3 +1,5 @@
-export const Booking = () => {
- return <h1>Booking page</h1>;
-};
+import { Booking } from "@/components/pageContent/Booking";
+
+export default function booking() {
+ return <Booking />;
+}
